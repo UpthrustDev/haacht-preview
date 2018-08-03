@@ -3,8 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "blazy": "^1.8.2",
+    "bowser": "^2.0.0-alpha.4",
+    "classnames": "^2.2.6",
+    "flickity-bg-lazyload": "^1.0.0",
+    "ie-array-find-polyfill": "^1.1.0",
+    "ismobilejs": "^0.4.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "react": "^16.4.2",
+    "react-click-outside": "^3.0.1",
+    "react-document-meta": "^3.0.0-beta.2",
     "react-dom": "^16.4.2",
+    "react-flickity-component": "^3.0.3",
+    "react-google-maps": "^9.4.5",
+    "react-headrooms": "^1.0.6",
     "react-scripts": "1.1.4"
   },
   "scripts": {

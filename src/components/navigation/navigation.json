@@ -1,0 +1,124 @@
+{
+    "navigation": {
+        "id": "dsk4Z2Jkj25J235",
+        "title": "Hoofdnavigatie",
+        "links": [
+            {
+                "id": "dsfjlkdjflksjdlkjflksdjdkar",
+                "name": "Brouwerij",
+                "url": "/brouwerij/",
+                "key": "brewery",
+                "sublinks": [
+                    {
+                        "id": "kdsjflkdfjslkjsdl",
+                        "name": "Geschiedenis",
+                        "url": "/bedrijf/",
+                        "image": "/static/img/nav/geschiedenis.jpg"
+                    },
+                    {
+                        "id": "kdsjflkdfjsjsdl",
+                        "name": "Brouwproces",
+                        "url": "/bedrijf/",
+                        "image": "/static/img/nav/brouwproces.jpg"
+                    },
+                    {
+                        "id": "kdsjfljsdl",
+                        "name": "Brouwerijbezoek",
+                        "url": "/bedrijf/",
+                        "image": "/static/img/nav/brouwerijbezoek.jpg"
+                    },
+                    {
+                        "id": "kdsjflkdfjslkj",
+                        "name": "Nieuws",
+                        "url": "/bedrijf/"
+                    }
+                ]
+            },
+            {
+                "id": "ddfslkazuroizuedcvw,",
+                "name": "Merken",
+                "url": "/merken/",
+                "key": "brands",
+                "sublinks": [
+                    {
+                        "id": "kdsjflkdfjslkjsdl",
+                        "name": "Bieren",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "fjsjsdfdsfsdfl",
+                        "name": "Waters en frisdranken",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "kdzerzerzegxjsdl",
+                        "name": "Wijnen",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "aaaaaaaa",
+                        "name": "Koffies",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "kbbslf,sdlkjj",
+                        "name": "Verkooppunten",
+                        "url": "/bedrijf/"
+                    }
+                ]
+            },
+            {
+                "id": "zeriezpoekmx",
+                "name": "Horeca",
+                "url": "/horeca/",
+                "key": "horeca",
+                "sublinks": [
+                    {
+                        "id": "kdzerzerdfsdfsdfszegxjsdl",
+                        "name": "Samenwerken",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "aaazerzeaaaaa",
+                        "name": "Trainings & cursussen",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "kbbsfdsfdslfsdlkjj",
+                        "name": "Horecapanden",
+                        "url": "/bedrijf/"
+                    }
+                ]
+            },
+            {
+                "id": "dsfzepozrpjfmwdjs",
+                "name": "Bedrijf",
+                "url": "/bedrijf/",
+                "key": "company",
+                "sublinks": [
+                    {
+                        "id": "kdsjflkdfsddfsfjslkjsdl",
+                        "name": "Wie zijn we",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "fjsdfsfdshhrtjsdfdsfsdfl",
+                        "name": "Wij engageren ons",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "kdzzetreterzerzegxjsdl",
+                        "name": "Kwaliteit gegarandeerd",
+                        "url": "/bedrijf/"
+                    },
+                    {
+                        "id": "aaaaafdsbcaaa",
+                        "name": "Werken bij de brouwerij",
+                        "url": "/bedrijf/"
+                    }
+                ]
+            }
+        ]
+        
+    }
+}

@@ -1,0 +1,54 @@
+# Test in playground: https://play.netlify.com/redirects
+# TODO dynamically create netlify redirect file: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-plugin-netlify/src/create-redirects.js
+
+# Temporarily !!
+#/en/*               /nl-be
+#/fr/*               /nl-be
+#/fr-BE/*            /nl-be
+#/nl/*               /nl-be
+
+# Brouwerij
+
+/nl-BE/Brouwerij/Brouwkunst        					                          /nl-be/brouwerij/brouwproces
+/nl-BE/Brouwerij/brouwerij/brouwerijbezoek/                             /nl-BE/Brouwerij/brouwerij/brouwerijbezoek   
+/nl-BE/Brouwerij/Evenementen        		                              /nl-be/brouwerij/artikels/evenementen
+/nl-BE/Brouwerij/Onze_uitgaven        		                            /nl-be/brouwerij/artikels/publicaties
+
+# Merken
+
+/nl-BE/Merken/Waters_en_frisdranken                                   /nl-be/merken/waters-frisdranken
+/nl-BE/Merken/Bieren/Super 8 IPA                                      /nl-be/merken/bieren/super-8-ipa
+
+# Horeca
+
+/nl-BE/Horeca/Horecapanden          				                          /nl-be/horeca/panden
+/nl-BE/Verhalen										                                    /nl-be/brouwerij/artikels/verhalen
+
+# Pers
+
+/nl-BE/Press                                                          /nl-be/brouwerij/artikels/pers
+/nl-BE/Press/Logo_packshots                                           /nl-be/logo-packshots
+
+# Bedrijf
+
+/nl-BE/Bedrijfsinformatie           				                                         /nl-be/bedrijf
+/nl-BE/Bedrijfsinformatie/Contact                                                            /nl-be/contact
+/nl-BE/Bedrijfsinformatie/Investor relations                                                 /nl-be/bedrijf/investor-relations
+/nl-BE/Bedrijfsinformatie/Werken%20bij%20Brouwerij%20Haacht                                  /nl-be/brouwerij/jobs
+/nl-BE/Bedrijfsinformatie/Werken%20bij%20Brouwerij%20Haacht/Spontaan%20solliciteren          /nl-be/brouwerij/jobs/spontaan-solliciteren
+/nl-BE/Bedrijfsinformatie/Werken%20bij%20Brouwerij%20Haacht/Vakantiewerk                     /nl-be/brouwerij/jobs/vakantiewerk-stage
+/nl-BE/Bedrijfsinformatie/Investor%20relations                                               /nl-be/bedrijf/investor-relations
+
+# Shop
+
+/shop/                                                                https://shop.haacht.com
+/nl-BE/Shop/*                                                         https://shop.haacht.com
+/nl-BE/Shop/                                                          https://shop.haacht.com
+
+
+/nl-be/*            /nl-be/404/
+/fr-be/*            /fr-be/404/
+/fr/*               /fr/404/
+/en/*               /en/404/
+/nl/*               /nl/404/
+/*                  /en/404/
