@@ -118,7 +118,9 @@ const ImmoSingleDetails = ({ pand, content: { texts: { titles, subTitles, option
             </div>
             <div className="property-meta-block__row">
               <div className="row-label" style={{ width: '100%' }}>
-                {node.extraInfo.childMarkdownRemark.internal.content}
+                {
+                  node.extraInfo
+                }
               </div>
             </div>
           </div>
@@ -129,19 +131,19 @@ const ImmoSingleDetails = ({ pand, content: { texts: { titles, subTitles, option
             <h6>{titles.contactUs}</h6>
           </div>
 
-          {_get(node, 'contact[0].telephone') &&
-            renderRow(subTitles.phone, _get(node, 'contact[0].telephone'))}
-          {_get(node, 'contact[0].email') && (
+          {_get(node, 'contact[0].fields.telephone') &&
+            renderRow(subTitles.phone, _get(node, 'contact[0].fields.telephone'))}
+          {_get(node, 'contact[0].fields.email') && (
             <div className="property-meta-block__row">
               <div className="row-label">{subTitles.email}</div>
               <div className="row-field">
-                <a href={`mailto:${_get(node, 'contact[0].email')}`}>
-                  {_get(node, 'contact[0].email')}
+                <a href={`mailto:${_get(node, 'contact[0].fields.email')}`}>
+                  {_get(node, 'contact[0].fields.email')}
                 </a>
               </div>
             </div>
           )}
-          {_get(node, 'contact[0].fax') && renderRow(subTitles.fax, _get(node, 'contact[0].fax'))}
+          {_get(node, 'contact[0].fields.fax') && renderRow(subTitles.fax, _get(node, 'contact[0].fields.fax'))}
         </div>
       </div>
     );

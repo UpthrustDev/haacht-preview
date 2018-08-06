@@ -50,7 +50,7 @@ const getPand = (pand, content, immoContent, location) => {
               <div key={index} className="property-images-slider__slide">
                 <div
                   className="u-full u-cover u-cover--center"
-                  data-flickity-bg-lazyload={_get(item, 'file.url')}
+                  data-flickity-bg-lazyload={_get(item, 'fields.file.url')}
                 />
               </div>
             )}

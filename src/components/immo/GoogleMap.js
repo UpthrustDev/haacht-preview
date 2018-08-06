@@ -30,7 +30,7 @@ class GoogleMapComponent extends React.Component {
   };
 
   handlePropertyClick = slug => () => {
-    
+
   };
 
   handleCloseClick = () => () => {
@@ -70,7 +70,7 @@ class GoogleMapComponent extends React.Component {
               <div className="map-popover__image u-block-ratio u-block-ratio--16-9">
                 <img
                   className="u-full u-object-fit"
-                  src={_get(panden.node, 'image.file.url')}
+                  src={_get(panden.node, 'image.fields.file.url')}
                   alt="Image Description"
                 />
               </div>
@@ -132,7 +132,7 @@ class GoogleMapComponent extends React.Component {
               >
                 <img
                   className="u-full u-object-fit"
-                  src={_get(pand, 'node.image.file.url')}
+                  src={_get(pand, 'node.image.fields.file.url')}
                   alt="Image Description"
                 />
               </div>

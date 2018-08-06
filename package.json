@@ -6,6 +6,7 @@
     "blazy": "^1.8.2",
     "bowser": "^2.0.0-alpha.4",
     "classnames": "^2.2.6",
+    "contentful": "^6.1.2",
     "flickity-bg-lazyload": "^1.0.0",
     "ie-array-find-polyfill": "^1.1.0",
     "ismobilejs": "^0.4.1",
