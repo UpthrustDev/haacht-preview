@@ -90,6 +90,7 @@ const ImmoSingle = ({
   slug_en,
   slug_fr,
   slug_fr_be,
+  changeLanguage
 }) => {
   return (
     <PageWrapper
@@ -107,6 +108,7 @@ const ImmoSingle = ({
       slug_fr={slug_fr}
       slug_fr_be={slug_fr_be}
       title={`${panden.edges[0].node.title} | Brouwerij Haacht`}
+      changeLanguage={changeLanguage}
     >
       {getPand(panden.edges[0], content, immoContent, location)}
     </PageWrapper>

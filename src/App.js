@@ -1711,14 +1711,15 @@ class App extends Component {
     this.state = {
       object: null,
       loaded: false,
-      error: null
+      error: null,
+      language: getAllUrlParams().lang
     };
   }
 
   componentDidMount(){
     var object = this;
     console.log("component mounted", getAllUrlParams().id)
-    client.getEntries({'sys.id': getAllUrlParams().id, include: 10, locale: "nl-BE"})
+    client.getEntries({'sys.id': getAllUrlParams().id, include: 10, locale: object.state.language})
     .then(function (entries) {
        // log the file url of any linked assets on field `image`
        var pand = entries.items[0];
@@ -1732,6 +1733,14 @@ class App extends Component {
            loaded: true
          });
    })
+  }
+
+  changeLanguage(language){
+    console.log(language)
+  }
+
+  getData(){
+
   }
 
   render() {
@@ -1759,6 +1768,7 @@ class App extends Component {
           agePopup={data.data.agePopup}
           footerMenu={data.data.footerMenu}
           cookiesPopup={data.data.cookiesPopUp}
+          changeLanguage = {this.changeLanguage}
         />
       </div>
     );
