@@ -51,7 +51,7 @@ class Navigation extends React.Component {
 
   changeLanguage(language){
     console.log(language)
-    window.location.href = "/?id=MHQ0SGIhmCYo6q2gGY2Yg&lang="+language;
+    window.location.href = "/?id="+getAllUrlParams().id+"&lang="+language;
   }
 
   render() {
