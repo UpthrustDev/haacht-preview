@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ImmoTemplate from './ImmoTemplate'
 import NewsTemplate from './NewsTemplate'
+import BrandTemplate from './BrandTemplate'
 import navigation from './components/navigation/navigation.json';
 
 var contentful = require('contentful')
@@ -56,8 +57,8 @@ class App extends Component {
    function dataOtherSpace(object){
      var client2 = contentful.createClient({
        space: 'vlb1ben6vtp9',
-
-       accessToken: '6800fe70f7440fabd2a9a7427c01e3408de658699174fb89e92a32946374f6ef'
+       accessToken: '5b4c238a847d0699990cd252f39514fe031befa50b1a5b0424e663a4ec392398',
+        host: "preview.contentful.com"
      })
 
      client2.getEntries({'sys.id': getAllUrlParams().id, include: 10, locale: object.state.language || "nl-BE"})
@@ -94,6 +95,19 @@ class App extends Component {
              type: "news"
            });
        }
+       else if(entries.items[0].sys.contentType.sys.id=="brand"){
+         var news = entries.items[0];
+         news.node=news.fields;
+         var AllNews = {
+           edges: [news]
+         }
+
+           object.setState({
+             object: AllNews,
+             loaded: true,
+             type: "brand"
+           });
+       }
     })
    }
   }
@@ -118,12 +132,13 @@ class App extends Component {
       if(this.state.type=="news"){
         return(<NewsTemplate obj={this.state.object} />)
       }
+      if(this.state.type=="brand"){
+        return(<BrandTemplate obj={this.state.object} />)
+      }
     return (
 
       <div className="App">
-
-
-
+        <h2>Geen Preview vioor dit type</h2>
       </div>
     );
   }
