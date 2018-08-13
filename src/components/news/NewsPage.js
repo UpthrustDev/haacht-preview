@@ -1,7 +1,6 @@
 import React from 'react';
 import _findIndex from 'lodash/findIndex';
 import _get from 'lodash/get';
-import { navigateTo } from 'gatsby-link';
 import PageWrapper from '../shared/PageWrapper';
 import Header from './Header';
 import Navigation from './Navigation';
@@ -13,7 +12,7 @@ import Press from './Press/Press';
 import Awards from './Awards/Awards';
 import SubscriptionForm from './Publications/SubscriptionForm';
 import cx from 'classnames';
-import { getPartOfUrl, convertUrl } from '../../helpers/navigationUrl';
+import { getPartOfUrl, convertUrl } from '../helpers/navigationUrl';
 
 class NewsPage extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class NewsPage extends React.Component {
 
   handleNavigationClick = (activeSection, link) => () => {
     this.setState({ activeSection });
-    navigateTo(`/${getPartOfUrl(this.props.location, 3)}/${link.toLowerCase()}`);
+    //navigateTo(`/${getPartOfUrl(this.props.location, 3)}/${link.toLowerCase()}`);
   };
 
   handleSubscription = () => {

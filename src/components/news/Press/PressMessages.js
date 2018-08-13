@@ -1,8 +1,8 @@
 import React from 'react';
-import { convertDate } from '../../../helpers/convertDate';
+import { convertDate } from '../../helpers/convertDate';
 import LoadMore from '../../shared/LoadMore';
 import Link from '../../shared/Link';
-import { getPartOfUrl } from '../../../helpers/navigationUrl';
+import { getPartOfUrl } from '../../helpers/navigationUrl';
 import _get from 'lodash/get';
 import _filter from 'lodash/filter';
 

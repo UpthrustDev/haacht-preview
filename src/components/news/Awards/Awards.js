@@ -2,7 +2,7 @@ import React from 'react';
 import _get from 'lodash/get';
 import _filter from 'lodash/filter';
 import Link from '../../shared/Link';
-import { getPartOfUrl, location } from '../../../helpers/navigationUrl';
+import { getPartOfUrl, location } from '../../helpers/navigationUrl';
 
 const Awards = ({ awards, location, linkToBrands }) => {
   for (var i = 0; i < awards.length; i++) {

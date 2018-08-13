@@ -1,11 +1,11 @@
 import React from 'react';
 import _get from 'lodash/get';
 import _reduce from 'lodash/reduce';
-import mandrillClient from '../../../helpers/mandrillClient';
+import mandrillClient from '../../helpers/mandrillClient';
 import _find from 'lodash/find';
 import { Text, Checkbox, Radio, TextArea, Number } from '../../shared/Form';
 import validator from '../../shared/Form/validator';
-import { getLanguage } from '../../../helpers/navigationUrl';
+import { getLanguage } from '../../helpers/navigationUrl';
 
 class SubscriptionForm extends React.Component {
   fieldValidators = {};

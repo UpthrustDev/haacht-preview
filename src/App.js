@@ -4,6 +4,7 @@ import './App.css';
 import ImmoTemplate from './ImmoTemplate'
 import NewsTemplate from './NewsTemplate'
 import BrandTemplate from './BrandTemplate'
+import NewsPage from './EventsTemplate'
 import navigation from './components/navigation/navigation.json';
 
 var contentful = require('contentful')
@@ -21,13 +22,18 @@ class App extends Component {
       object: null,
       type: null,
       loaded: false,
-      error: null,
+      loading: false,
+      error: false,
       language: getAllUrlParams().lang
     };
   }
 
   componentDidMount(){
     var object = this;
+    object.setState({
+      loading: true,
+      error: false
+    });
     console.log("component mounted", getAllUrlParams().id)
     client.getEntries({'sys.id': getAllUrlParams().id, include: 10, locale: object.state.language || "nl-BE"})
     .then(function (entries) {
@@ -49,10 +55,21 @@ class App extends Component {
          object.setState({
            object: panden,
            loaded: true,
+           error: false,
            type: "property"
          });
       }
    })
+   .catch(function(error){
+     console.log("Error");
+     object.setState({
+       object: null,
+       loaded: true,
+       error: true,
+       type: null
+     });
+     dataOtherSpace(object)
+   });
 
    function dataOtherSpace(object){
      var client2 = contentful.createClient({
@@ -79,6 +96,7 @@ class App extends Component {
           object.setState({
             object: panden,
             loaded: true,
+            error: false,
             type: "property"
           });
        }
@@ -92,6 +110,7 @@ class App extends Component {
            object.setState({
              object: AllNews,
              loaded: true,
+             error: false,
              type: "news"
            });
        }
@@ -105,10 +124,40 @@ class App extends Component {
            object.setState({
              object: AllNews,
              loaded: true,
+             error: false,
              type: "brand"
            });
        }
+       else if(entries.items[0].sys.contentType.sys.id=="event"){
+           client2.getEntries({'content_type': "event", include: 10, locale: object.state.language || "nl-BE"})
+           .then(function (entries) {
+             var news = entries.items;
+             for(var i = 0;i<news.length;i++){
+               news[i].node=news[i].fields
+             }
+             var AllNews = {
+               edges: news
+             }
+             console.log("events:", AllNews)
+               object.setState({
+                 object: AllNews,
+                 loaded: true,
+                 error: false,
+                 type: "event"
+               });
+           })
+       }
     })
+    .catch(function(error){
+      console.log("Error");
+      object.setState({
+        object: null,
+        loaded: true,
+        error: true,
+        type: null
+      })
+    }
+    );
    }
   }
 
@@ -121,25 +170,26 @@ class App extends Component {
   }
 
   render() {
-      if(!this.state.object){
-        return(
-        <div className="loading">Loading or error</div>
-        )
-      }
       if(this.state.type=="property"){
         return(<ImmoTemplate obj={this.state.object} />)
       }
-      if(this.state.type=="news"){
+      else if(this.state.type=="news"){
         return(<NewsTemplate obj={this.state.object} />)
       }
-      if(this.state.type=="brand"){
+      else if(this.state.type=="brand"){
         return(<BrandTemplate obj={this.state.object} />)
       }
+      else if(this.state.type=="event"){
+        return(<NewsPage obj={this.state.object} />)
+      }
+      else if(this.state.loaded ){
+        return(<h2 className="previewText">Data is loading</h2>)
+      }
+      else if(this.state.error){
+        return(<h2 className="previewText">Er deed zich een technische fout voor. Gelieve een preview te openen vanuit Contentful</h2>)
+      }
     return (
-
-      <div className="App">
-        <h2>Geen Preview vioor dit type</h2>
-      </div>
+        <h2 className="previewText">Data is loading</h2>
     );
   }
 }

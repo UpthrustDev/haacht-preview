@@ -1,9 +1,9 @@
 import React from 'react';
-import { convertDate } from '../../../helpers/convertDate';
+import { convertDate } from '../../helpers/convertDate';
 import _get from 'lodash/get';
 import _filter from 'lodash/filter';
 import Link from '../../shared/Link';
-import { getLanguage } from '../../../helpers/navigationUrl';
+import { getLanguage } from '../../helpers/navigationUrl';
 
 const NewsHighlight = ({ news, newsTitle, link, location, news_available }) => {
   var filterednews = _filter(news, 'node.slug');

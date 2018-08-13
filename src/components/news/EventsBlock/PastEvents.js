@@ -1,8 +1,8 @@
 import React from 'react';
-import { convertDate } from '../../../helpers/convertDate';
+import { convertDate } from '../../helpers/convertDate';
 import LoadMore from '../../shared/LoadMore';
 import Link from '../../shared/Link';
-import { getLanguage } from '../../../helpers/navigationUrl';
+import { getLanguage } from '../../helpers/navigationUrl';
 import _filter from 'lodash/filter';
 
 class PastEvents extends React.Component {
@@ -53,7 +53,7 @@ class PastEvents extends React.Component {
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw"
                     alt="Image description"
                     sizes="100vw"
-                    data-src={event.node.featuredImage ? event.node.featuredImage.file.url : null}
+                    data-src={event.node.featuredImage ? event.node.featuredImage.fields.file.url : null}
                     data-object-fit
                   />
                 </div>

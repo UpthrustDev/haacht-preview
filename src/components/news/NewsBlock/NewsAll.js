@@ -1,12 +1,12 @@
 import React from 'react';
-import { navigateTo } from 'gatsby-link';
-import { convertDate } from '../../../helpers/convertDate';
+//import { navigateTo } from 'gatsby-link';
+import { convertDate } from '../../helpers/convertDate';
 import LoadMore from '../../shared/LoadMore';
 import _get from 'lodash/get';
 import Link from '../../shared/Link';
 import _split from 'lodash/split';
 import _filter from 'lodash/filter';
-import { getLanguage } from '../../../helpers/navigationUrl';
+import { getLanguage } from '../../helpers/navigationUrl';
 
 const NewsAll = ({ news, sectionTitle, buttonLoad, newsTitle, location, link, news_available }) => {
   var filterednews = _filter(news, 'node.slug');

@@ -3,7 +3,7 @@ import Inview from '../../shared/Inview';
 import cx from 'classnames';
 import _get from 'lodash/get';
 import Link from '../../shared/Link';
-import { getPartOfUrl } from '../../../helpers/navigationUrl';
+import { getPartOfUrl } from '../../helpers/navigationUrl';
 
 class Story extends React.Component {
   state = {

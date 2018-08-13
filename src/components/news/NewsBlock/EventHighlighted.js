@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertDate, getDay, getMonthYear } from '../../../helpers/convertDate';
+import { convertDate, getDay, getMonthYear } from '../../helpers/convertDate';
 import _get from 'lodash/get';
 import Link from '../../shared/Link';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from '../../shared/Link';
-import { getDay, getMonthYear, convertDate } from '../../../helpers/convertDate';
+import { getDay, getMonthYear, convertDate } from '../../helpers/convertDate';
 import LoadMore from '../../shared/LoadMore';
-import { getLanguage } from '../../../helpers/navigationUrl';
+import { getLanguage } from '../../helpers/navigationUrl';
 import _get from 'lodash/get';
 import _filter from 'lodash/filter';
 
@@ -48,7 +48,7 @@ class UpcomingEvents extends React.Component {
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw"
                       alt="Image description"
                       sizes="100vw"
-                      data-src={_get(event, 'node.featuredImage.file.url')}
+                      data-src={_get(event, 'node.featuredImage.fields.file.url')}
                       data-object-fit
                     />
                   </div>
@@ -63,7 +63,7 @@ class UpcomingEvents extends React.Component {
                     <p className="common-text">
                       {_get(
                         event,
-                        'node.childContentfulEvenementContentTextNode.childMarkdownRemark.internal.content'
+                        'node.content'
                       )}
                     </p>
                     {event.node.internalContent ? (
