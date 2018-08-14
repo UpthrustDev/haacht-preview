@@ -11,7 +11,8 @@ var contentful = require('contentful')
 
 var client = contentful.createClient({
   space: '4x9ynmufi2c6',
-  accessToken: '00776a927469f43f7646dedff5221ba86305d737741b46084ac5072e4c26acdc'
+  accessToken: '13e7e907fa42f88c85fe5667da70363835adb5f9b55b73f6b4660be661cc8356',
+  host: "preview.contentful.com"
 })
 //MHQ0SGIhmCYo6q2gGY2Yg
 class App extends Component {
@@ -52,24 +53,12 @@ class App extends Component {
          edges: [pand]
        }
 
-         object.setState({
-           object: panden,
-           loaded: true,
-           error: false,
-           type: "property"
-         });
+       object.setState({
+         object: panden,
+         type: "property"
+       });
       }
    })
-   .catch(function(error){
-     console.log("Error");
-     object.setState({
-       object: null,
-       loaded: true,
-       error: true,
-       type: null
-     });
-     dataOtherSpace(object)
-   });
 
    function dataOtherSpace(object){
      var client2 = contentful.createClient({
