@@ -24,7 +24,7 @@ const ImmoSingleDetails = ({ pand, content: { texts: { titles, subTitles, option
           <div className="property-meta-block__title">
             <h6>{titles.generalInformation}</h6>
           </div>
-          {node.type && renderRow(subTitles.propertyType, node.type.title)}
+          {node.type && renderRow(subTitles.propertyType, node.type.fields.title)}
           {(node.horecaFurnished || node.horecaEstimatedArea) &&
             renderRow(
               subTitles.horecaPart,
@@ -73,11 +73,11 @@ const ImmoSingleDetails = ({ pand, content: { texts: { titles, subTitles, option
                 node.house && !node.houseRooms && !node.houseGarden && !node.houseTerrace
                   ? options.yes
                   : ''
-              }${node.houseRooms ? node.houseRooms + ' ' + options.sleepingRooms : ''}${
-                node.houseGarden === true ? ', ' + options.garden : ''
-              }${node.houseTerrace ? ', ' + options.privateTerrace : ''}`
+              }${node.houseRooms ? node.houseRooms + ' ' + options.sleepingRooms + (node.houseGarden || node.houseTerrace?', ':'') : ''}${
+                node.houseGarden === true ? ' ' + options.garden : ''
+              }${node.houseTerrace ? (node.houseGarden || node.houseTerrace?', ':'') + options.privateTerrace : ''}`
             )}
-          {node.condition && renderRow(subTitles.condition, _get(node, 'condition.title'))}
+          {node.condition && renderRow(subTitles.condition, _get(node, 'condition.fields.title'))}
         </div>
         <div className="property-meta-block">
           <div className="property-meta-block__title">
